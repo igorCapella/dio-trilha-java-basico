@@ -4,7 +4,7 @@ public class ContaTerminal {
     public static void main(String[] args) throws Exception {
         //TODO: Criar um objeto scanner para ler os dados do terminal
         Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(java.util.Locale.US);
+        scanner.useLocale(java.util.Locale.US); 
 
         //Exibir as mensagens para o nosso usuário e capturar os valores digitados
         System.out.println("Seja bem-vindo ao ByteBank, vamos criar sua conta!");
