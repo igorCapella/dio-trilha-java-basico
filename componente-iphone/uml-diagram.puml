@@ -1,0 +1,59 @@
+@startuml iPhone-UML-Diagram
+
+!theme plain
+skinparam backgroundColor white
+skinparam classBackgroundColor lightblue
+skinparam interfaceBackgroundColor lightgreen
+skinparam classBorderColor black
+skinparam interfaceBorderColor black
+
+interface ReprodutorMusical {
+    +tocar() : void
+    +pausar() : void
+    +selecionarMusica(musica: String) : void
+}
+
+interface AparelhoTelefonico {
+    +ligar(numero: String) : void
+    +atender() : void
+    +iniciarCorreioVoz() : void
+}
+
+interface NavegadorInternet {
+    +exibirPagina(url: String) : void
+    +adicionarNovaAba() : void
+    +atualizarPagina() : void
+}
+
+class iPhone {
+    -musicaAtual: String
+    -tocando: boolean
+    -paginaAtual: String
+    -numeroAbas: int
+    
+    +iPhone()
+    +tocar() : void
+    +pausar() : void
+    +selecionarMusica(musica: String) : void
+    +ligar(numero: String) : void
+    +atender() : void
+    +iniciarCorreioVoz() : void
+    +exibirPagina(url: String) : void
+    +adicionarNovaAba() : void
+    +atualizarPagina() : void
+    +getMusicaAtual() : String
+    +isTocando() : boolean
+    +getPaginaAtual() : String
+    +getNumeroAbas() : int
+}
+
+iPhone ..|> ReprodutorMusical : implements
+iPhone ..|> AparelhoTelefonico : implements
+iPhone ..|> NavegadorInternet : implements
+
+note top of iPhone : Classe principal que implementa\ntodas as funcionalidades do iPhone
+note left of ReprodutorMusical : Funcionalidades\nde reprodução musical
+note right of AparelhoTelefonico : Funcionalidades\ntelefônicas
+note bottom of NavegadorInternet : Funcionalidades\nde navegação web
+
+@enduml
